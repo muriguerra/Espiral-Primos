@@ -29,13 +29,11 @@ def primos():
 
 
     for i in range(1,   final):
-
-
-
+        
         if (passo % tamanho_passo == 0): #checa se passo é do tamanho do passo para poder virar e mudar o caso
             caso = (caso + 1) % 4        #aumenta caso(esquerda, direita, cima ou baixo)
             virou += 1                   #avisa que virou
-
+            
             if (virou % 2 ==0):     # Tamanho do passo aumenta a cada 2 curvas 1, 1, 2, 2, 3, 3, ...
                 tamanho_passo += 1
 
@@ -46,6 +44,7 @@ def primos():
 
         p = 0
         while i % num_primos[p] != 0 and i != 1:
+            
             if p == len(num_primos) - 1:
                 num_primos.append(i)
             p += 1
@@ -76,14 +75,10 @@ def primos():
         if (caso == 0):
             baixo(x, y)
 
-
-
         if (i == final - 1):
             plt.savefig('primo.png')
             print(len(num_primos))
             wait = input()
-
-
 
 def cima(x, y):
     x.append(x[-1])
