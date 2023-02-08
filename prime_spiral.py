@@ -71,7 +71,7 @@ def primos():
             plt.savefig('primo.png')
             wait = input()
             
-    print(primos)
+    print(num_primos)
     print(len(num_primos))
 
 def cima(x, y):
