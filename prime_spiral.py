@@ -5,12 +5,6 @@ import numpy as np
 
 def primos():
 
-    plt.rcParams["figure.figsize"] = [5, 5]
-    plt.rcParams["figure.autolayout"] = True
-
-    plt.xlim(-5, 5)
-    plt.ylim(-5, 5)
-
     x = [0]
     y = [0]
     final = 1601
@@ -49,8 +43,6 @@ def primos():
                 num_primos.append(i)
             p += 1
 
-        print(num_primos)
-
         if (i in num_primos):
             ax.plot(x[i-1], y[i-1], marker="o", markersize="5", markeredgecolor="darkred", markerfacecolor="darkred")
         elif (i == 1):
@@ -77,28 +69,26 @@ def primos():
 
         if (i == final - 1):
             plt.savefig('primo.png')
-            print(len(num_primos))
             wait = input()
+            
+    print(primos)
+    print(len(num_primos))
 
 def cima(x, y):
     x.append(x[-1])
     y.append(y[-1] + 1)
-    print("cima", x, y)
 
 def direita(x, y):
     x.append(x[-1] + 1)
     y.append(y[-1])
-    print("direita", x, y)
 
 def esquerda(x, y):
     x.append(x[-1] - 1)
     y.append(y[-1])
-    print("esquerda", x, y)
 
 def baixo(x, y):
     x.append(x[-1])
     y.append(y[-1] - 1)
-    print("baixo", x, y)
 
 if __name__ == "__main__":
     primos()
